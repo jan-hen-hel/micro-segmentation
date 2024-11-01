@@ -41,3 +41,8 @@ uci commit network
 echo "Setting up WLAN-AP for iot network"
 uci -m import wireless < iot_wireless.uci
 uci commit wireless
+
+echo "Creating Firewall-Zone for iot-Network"
+echo "Setting up WLAN-AP for iot network"
+uci -m import firewall < firewall.uci
+uci commit firewall
