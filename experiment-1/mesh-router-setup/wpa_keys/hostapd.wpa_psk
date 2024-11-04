@@ -1,4 +1,4 @@
-vlanid=20 20:0A:52:06:E4:32 apu-giot-20-psk
+vlanid=20 00:0A:52:06:E4:32 apu-giot-20-psk
 vlanid=21 00:0A:52:06:E4:2A apu-giot-21-psk
 vlanid=22 00:0A:52:06:E4:31 apu-giot-22-psk
 
