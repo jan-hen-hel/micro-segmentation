@@ -30,7 +30,11 @@ done
 
 echo "Creating a lan-port at the OVS-bridge that can be utilized to distribute lan-packets along the mesh"
 ovs-vsctl add-port iot iotupl -- set Interface iotupl type=internal 
+
+# Increase MTU on OpenFlow interfaces involved in MPLS tagged packet handling
 ovs-vsctl set int iotupl mtu_request=1600
+ovs-vsctl set int iot mtu_request=1600
+
 
 ## Add Port eth2 (wired IoT-Port to the bridge
 echo "Adding eth2 (wired IoT-Port) to OVS bridge"
@@ -47,4 +51,3 @@ echo "Setting up WLAN-AP for iot network"
 uci -m import wireless < iot_wireless.uci
 uci commit wireless
 
-echo "Setting interface mtu 1600: lan, iotport, iotupl, iot"
