@@ -5,17 +5,5 @@ config interface 'iot'
 	option netmask '255.255.255.0'
 
 config device
-	option name 'eth2'
-	option mtu '1600'
-
-config device
-	option name 'iotupl'
-	option mtu '1600'
-
-config device
-	option name 'iot'
-	option mtu '1600'
-
-config device
 	option name 'phy1-mesh0'
 	option mtu '1600'
