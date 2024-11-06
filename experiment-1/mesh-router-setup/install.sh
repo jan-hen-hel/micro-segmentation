@@ -38,9 +38,11 @@ ovs-vsctl add-port iot eth2
 echo "Defining UCI network configuration for OVS bridge-ports"
 uci -m import network < network_iot_if.uci
 uci add_List network.@device[0].ports='iotupl'
+uci set network.@device[0].mtu='1600'
 uci commit network
 
 echo "Setting up WLAN-AP for iot network"
 uci -m import wireless < iot_wireless.uci
 uci commit wireless
 
+echo "Setting interface mtu 1600: lan, iotport, iotupl, iot"
