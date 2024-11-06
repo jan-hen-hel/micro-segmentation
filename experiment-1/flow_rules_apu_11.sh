@@ -38,8 +38,3 @@ ovs-ofctl  add-flow iot "table=10,metadata[1..20]=10,metadata[0]=0,dl_dst=00:0A:
 ## Traffic from APU-22 to APU-20
 ovs-ofctl  add-flow iot "table=10,metadata[1..20]=22,actions=iot_20"
 
-
-echo "Creating Firewall-Zone for iot-Network"
-echo "Setting up WLAN-AP for iot network"
-uci -m import firewall < firewall.uci
-uci commit firewall

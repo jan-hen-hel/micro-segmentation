@@ -13,3 +13,6 @@ wifi
 echo "Setting iot-interface address to 198.19.4.11"
 uci set network.iot.ipaddr='198.19.4.11'
 uci commit network
+
+echo "Script completed. Rebooting to apply uci-settings"
+reboot
