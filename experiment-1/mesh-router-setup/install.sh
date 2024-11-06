@@ -23,12 +23,14 @@ ovs-vsctl set-fail-mode iot secure
 echo "Added VLANs 20 to 40 to OVS bridge, ignoring errors resulting from non-existing devices. This can take a while"
 index=20
 while [ $index -le 41 ]; do
-   /usr/bin/ovs-vsctl add-port iot iot_$index -- set Interface iot_$index  ofport=$index
+   #/usr/bin/ovs-vsctl add-port iot iot_$index -- set Interface iot_$index  ofport=$index
+   /usr/bin/ovs-vsctl add-port iot iot_$index 
    index=$(( index + 1 ))
 done
 
 echo "Creating a lan-port at the OVS-bridge that can be utilized to distribute lan-packets along the mesh"
-ovs-vsctl add-port iot iotupl -- set Interface iotupl type=internal
+ovs-vsctl add-port iot iotupl -- set Interface iotupl type=internal 
+ovs-vsctl set int iotupl mtu_request=1600
 
 ## Add Port eth2 (wired IoT-Port to the bridge
 echo "Adding eth2 (wired IoT-Port) to OVS bridge"
