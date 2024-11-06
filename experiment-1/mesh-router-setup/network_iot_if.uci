@@ -1,6 +1,6 @@
 config interface 'iot'
 	option proto 'static'
 	option device 'iot'
-	option ipaddr '198.19.1.10'
+	option ipaddr '198.19.4.1'
 	option netmask '255.255.255.0'
 

@@ -6,7 +6,7 @@ ovs-ofctl del-flows iot
 # Populate table 1 and 2 for MPLS handling of incoming traffic
 sh flow_rules_mpls_untag.sh 
 
-# APU has two giot devices: APU-22
+# APU has onee giot devices: APU-22
 # Both are isolated. There is nothing local. Hence, after ingress filtering (to prevent MAC-spoofing) all traffic is forwarded to the MAC-interface
 
 # Outgoing
@@ -29,4 +29,3 @@ ovs-ofctl  add-flow iot "table=10,metadata[1..20]=10,actions=iot_22"
 
 # Traffic from APU-22 to APU-20
 ovs-ofctl  add-flow iot "table=10,metadata[1..20]=20,actions=iot_22"
-
