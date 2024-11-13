@@ -7,7 +7,7 @@ Experiment 1 is designed as the proof-of-concept experiment showing the general 
 
 The topology is shown in the following figure.
 
-TODO: Add picture
+![Experiment-Topology](/doc/experiment-1.png)
 
 ## Setting the experiment
 
