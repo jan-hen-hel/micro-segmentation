@@ -1,0 +1,70 @@
+date
+echo "Checking ARP-Table. No GIOT-APU should be present"
+arp -n
+echo "Trying to reach APU-20. this should succeed"
+ping -c 1 198.19.4.178
+echo "Trying to reach APU-21. this should fail"
+ping -c 1 198.19.4.170
+echo "Trying to reach Google DNS. this should succeed"
+ping -c 1 8.8.8.8
+echo "Checking ARP-Table. APU-21 should not be known"
+arp -n
+
+root@apu-giot-22:~# date
+Wed Nov 13 11:22:38 CET 2024
+root@apu-giot-22:~# echo "Checking ARP-Table. APU-20 may be present due to being used before"
+Checking ARP-Table. APU-20 may be present due to being used before
+root@apu-giot-22:~# arp -n
+IP address       HW type     Flags       HW address            Mask     Device
+198.19.4.170     0x1         0x0         00:00:00:00:00:00     *        phy0-sta0
+198.19.4.178     0x1         0x2         00:0a:52:06:e4:32     *        phy0-sta0
+198.19.4.10      0x1         0x2         00:0d:b9:47:6b:ba     *        phy0-sta0
+198.19.254.1     0x1         0x2         42:b7:46:02:0e:33     *        eth2
+root@apu-giot-22:~# echo "Trying to reach APU-21. this should succeed"
+Trying to reach APU-21. this should succeed
+root@apu-giot-22:~# ping -c 1 198.19.4.170
+root@apu-giot-22:~# date
+Wed Nov 13 11:24:04 CET 2024
+root@apu-giot-22:~# echo "Checking ARP-Table. No GIOT-APU should be present"
+Checking ARP-Table. No GIOT-APU should be present
+root@apu-giot-22:~# arp -n
+IP address       HW type     Flags       HW address            Mask     Device
+198.19.4.170     0x1         0x0         00:00:00:00:00:00     *        phy0-sta0
+198.19.4.178     0x1         0x2         00:0a:52:06:e4:32     *        phy0-sta0
+198.19.4.10      0x1         0x2         00:0d:b9:47:6b:ba     *        phy0-sta0
+198.19.254.1     0x1         0x2         42:b7:46:02:0e:33     *        eth2
+root@apu-giot-22:~# echo "Trying to reach APU-20. this should succeed"
+Trying to reach APU-20. this should succeed
+root@apu-giot-22:~# ping -c 1 198.19.4.178
+PING 198.19.4.178 (198.19.4.178) 56(84) bytes of data.
+64 bytes from 198.19.4.178: icmp_seq=1 ttl=64 time=6.10 ms
+
+--- 198.19.4.178 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 6.101/6.101/6.101/0.000 ms
+root@apu-giot-22:~# echo "Trying to reach APU-21. this should fail"
+Trying to reach APU-21. this should fail
+root@apu-giot-22:~# ping -c 1 198.19.4.170
+PING 198.19.4.170 (198.19.4.170) 56(84) bytes of data.
+From 198.19.4.177 icmp_seq=1 Destination Host Unreachable
+
+--- 198.19.4.170 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+root@apu-giot-22:~# echo "Trying to reach Google DNS. this should succeed"
+Trying to reach Google DNS. this should succeed
+root@apu-giot-22:~# ping -c 1 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=109 time=18.3 ms
+
+--- 8.8.8.8 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 18.293/18.293/18.293/0.000 ms
+root@apu-giot-22:~# echo "Checking ARP-Table. APU-21 should not be known"
+Checking ARP-Table. APU-21 should not be known
+root@apu-giot-22:~# arp -n
+IP address       HW type     Flags       HW address            Mask     Device
+198.19.4.170     0x1         0x0         00:00:00:00:00:00     *        phy0-sta0
+198.19.4.178     0x1         0x2         00:0a:52:06:e4:32     *        phy0-sta0
+198.19.4.10      0x1         0x2         00:0d:b9:47:6b:ba     *        phy0-sta0
+198.19.254.1     0x1         0x2         42:b7:46:02:0e:33     *        eth2

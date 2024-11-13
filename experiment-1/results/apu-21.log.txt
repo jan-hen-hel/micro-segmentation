@@ -1,0 +1,54 @@
+date
+echo "Checking ARP-Table. No GIOT-APU should be present"
+arp -n
+echo "Trying to reach APU-21. this should fail"
+ping -c 1 198.19.4.178
+echo "Trying to reach APU-22. this should fail"
+ping -c 1 198.19.4.177
+echo "Trying to reach Google DNS. this should succeed"
+ping -c 1 8.8.8.8
+echo "Checking ARP-Table. APU-20 and APU-20 should not be known"
+arp -n
+
+
+root@apu-giot-21:~# date
+Wed Nov 13 11:19:34 CET 2024
+root@apu-giot-21:~# echo "Checking ARP-Table. No GIOT-APU should be present"
+Checking ARP-Table. No GIOT-APU should be present
+root@apu-giot-21:~# arp -n
+IP address       HW type     Flags       HW address            Mask     Device
+198.19.4.10      0x1         0x2         00:0d:b9:47:6b:ba     *        phy0-sta0
+198.19.254.1     0x1         0x2         42:b7:46:02:0e:33     *        eth2
+root@apu-giot-21:~# echo "Trying to reach APU-21. this should fail"
+Trying to reach APU-21. this should fail
+root@apu-giot-21:~# ping -c 1 198.19.4.178
+PING 198.19.4.178 (198.19.4.178): 56 data bytes
+
+
+--- 198.19.4.178 ping statistics ---
+1 packets transmitted, 0 packets received, 100% packet loss
+root@apu-giot-21:~# echo "Trying to reach APU-22. this should fail"
+Trying to reach APU-22. this should fail
+root@apu-giot-21:~# ping -c 1 198.19.4.177
+PING 198.19.4.177 (198.19.4.177): 56 data bytes
+
+--- 198.19.4.177 ping statistics ---
+1 packets transmitted, 0 packets received, 100% packet loss
+root@apu-giot-21:~# echo "Trying to reach Google DNS. this should succeed"
+Trying to reach Google DNS. this should succeed
+root@apu-giot-21:~# ping -c 1 8.8.8.8
+PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: seq=0 ttl=109 time=15.644 ms
+
+--- 8.8.8.8 ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max = 15.644/15.644/15.644 ms
+root@apu-giot-21:~# echo "Checking ARP-Table. APU-20 and APU-20 should not be known"
+Checking ARP-Table. APU-20 and APU-20 should not be known
+root@apu-giot-21:~# arp -n
+IP address       HW type     Flags       HW address            Mask     Device
+198.19.4.177     0x1         0x0         00:00:00:00:00:00     *        phy0-sta0
+198.19.4.178     0x1         0x0         00:00:00:00:00:00     *        phy0-sta0
+198.19.4.10      0x1         0x2         00:0d:b9:47:6b:ba     *        phy0-sta0
+198.19.254.1     0x1         0x2         42:b7:46:02:0e:33     *        eth2
+root@apu-giot-21:~#
