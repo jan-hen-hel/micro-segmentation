@@ -1,0 +1,16 @@
+config zone
+	option name 'iot'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'REJECT'
+	option masq '1'
+	list network 'iot'
+
+config forwarding
+	option src 'iot'
+	option dest 'wan'
+
+config forwarding
+	option src 'lan'
+	option dest 'iot'
+

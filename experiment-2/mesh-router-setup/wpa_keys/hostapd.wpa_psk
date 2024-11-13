@@ -1,0 +1,4 @@
+vlanid=20 00:0A:52:06:E4:32 apu-giot-20-psk
+vlanid=31 00:00:00:00:00:00 nokia71-psk
+vlanid=32 00:00:00:00:00:00 ikea-psk-if-needed
+

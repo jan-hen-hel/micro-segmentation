@@ -1,0 +1,9 @@
+config interface 'iot'
+	option proto 'static'
+	option device 'iot'
+	option ipaddr '198.19.4.1'
+	option netmask '255.255.255.0'
+
+config device
+	option name 'phy1-mesh0'
+	option mtu '1600'

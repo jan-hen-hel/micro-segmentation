@@ -1,0 +1,7 @@
+config zone
+	option name 'iot'
+	option input 'REJECT'
+	option output 'REJECT'
+	option forward 'REJECT'
+	option masq '1'
+	list network 'iot'
