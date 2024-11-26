@@ -73,13 +73,3 @@ class Gateway():
         ])]
 
         datapath.send_msg(parser.OFPFlowMod(datapath=datapath, priority=0,table_id=10,instructions=output_instructions))
-
-
- #       unicast_instruction = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,[
- #           parser.OFPActionSetField(metadata=0),
- #           parser.NXActionRegMove(src_field="mpls_label",dst_field="metadata",n_bits=20, dst_ofs=1),
- #           parser.OFPActionPopMpls(ethertype=0x8847),
- #           parser.NXActionResubmitTable(table_id=2)])]
-
-#        unicast_msg = parser.OFPFlowMod(datapath=datapath, priority=0,table_id=1, match=match_unicast, instructions=unicast_instruction)
-#        datapath.send_msg(unicast_msg)
