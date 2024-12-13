@@ -18,7 +18,7 @@ class Gateway():
             raise "Gateway without IoT-Port"
 
 
-    def push_rules(self,datapath):
+    def onConnect(self,datapath):
         ofproto = datapath.ofproto
         parser = datapath.ofproto_parser
         
@@ -31,31 +31,31 @@ class Gateway():
         ## 1st: Broadcast-traffic
 
                 # Matches
-        match_broadcast = parser.OFPMatch(in_port=self.iot_port_num, eth_dst=("01:00:00:00:00:00","01:00:00:00:00:00"))
+        #match_broadcast = parser.OFPMatch(in_port=self.iot_port_num, eth_dst=("01:00:00:00:00:00","01:00:00:00:00:00"))
         match_unicast = parser.OFPMatch(in_port=self.iot_port_num)
 
-        broadcast_instruction = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,[
-            parser.NXActionRegMove(src_field="eth_type",dst_field="metadata",n_bits=16, dst_ofs=0),
-            parser.OFPActionPushMpls(0x8848),
-            parser.NXActionRegMove(src_field="metadata",dst_field="mpls_label",n_bits=15, dst_ofs=0),
-            parser.OFPActionPushMpls(0x8848),
-            parser.OFPActionSetField(mpls_label=10),
-            parser.OFPActionOutput(port=self.iot_upl_port_num)
-           ])]
+        #broadcast_instruction = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,[
+        #    parser.NXActionRegMove(src_field="eth_type",dst_field="metadata",n_bits=16, dst_ofs=0),
+        #    parser.OFPActionPushMpls(0x8848),
+        #    parser.NXActionRegMove(src_field="metadata",dst_field="mpls_label",n_bits=15, dst_ofs=0),
+        #    parser.OFPActionPushMpls(0x8848),
+        #    parser.OFPActionSetField(mpls_label=10),
+        #    parser.OFPActionOutput(port=self.iot_upl_port_num)
+        #   ])]
         
         unicast_instruction = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,[
             parser.NXActionRegMove(src_field="eth_type",dst_field="metadata",n_bits=16, dst_ofs=0),
-            parser.OFPActionPushMpls(0x8848),
-            parser.NXActionRegMove(src_field="metadata",dst_field="mpls_label",n_bits=15, dst_ofs=0),
             parser.OFPActionPushMpls(0x8847),
-            parser.OFPActionSetField(mpls_label=10),
+            parser.NXActionRegMove(src_field="metadata",dst_field="mpls_label",n_bits=16, dst_ofs=0),
+            parser.OFPActionPushMpls(0x8847),
+            parser.OFPActionSetField(mpls_label=0x10), # 10: vlan-id of gateway
             parser.OFPActionOutput(port=self.iot_upl_port_num)
             ])]
 
-        broadcast_msg = parser.OFPFlowMod(datapath=datapath, priority=0,table_id=0, match=match_broadcast, instructions=broadcast_instruction)
+        #broadcast_msg = parser.OFPFlowMod(datapath=datapath, priority=0,table_id=0, match=match_broadcast, instructions=broadcast_instruction)
         unicast_msg = parser.OFPFlowMod(datapath=datapath, priority=0,table_id=0, match=match_unicast, instructions=unicast_instruction)
 
-        datapath.send_msg(broadcast_msg)
+        #datapath.send_msg(broadcast_msg)
         datapath.send_msg(unicast_msg)
 
         # Incoming traffic on iotupl must be mpls-tag-remoged

@@ -27,41 +27,55 @@ from ryu.lib.packet import ethernet
 from ryu.lib.packet import ether_types
 from initial_rules import InitialRulez
 from gateway import Gateway
+from mesh_node import MeshNode
+
+import logging
 
 class MPLSIsolation(app_manager.RyuApp):
     OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]
 
     def __init__(self, *args, **kwargs):
         super(MPLSIsolation, self).__init__(*args, **kwargs)
-        self.vlan_to_switch_port = {}
         self.initial_rules = InitialRulez()
-
+        self.mesh_node = {}
+        logging.info("Application loaded")
 
     # Initial connect of the switch
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
     def switch_features_handler(self, ev):
         datapath = ev.msg.datapath
+        logging.info("OF swichting connected. Pushing initial rules. Datapath-id is: 0x%x", ev.msg.datapath_id)
         self.initial_rules.push(datapath)
         if (ev.msg.datapath_id == 0x10): # Gateway is APU-10
-            Gateway(datapath.ports).push_rules(datapath)
+            logging.info("Gateway connected")
+            self.gateway = Gateway(datapath.ports)
+            self.gateway.onConnect(datapath)
+        elif(ev.msg.datapath_id != 0x10): # Meshnode is APU-11
+            logging.info("Meshnode connected")
+            self.mesh_node[ev.msg.datapath_id] = MeshNode(datapath)
+            self.mesh_node[ev.msg.datapath_id].onConnect()
 
 
     # Attaching Port due to Request
-    @set_ev_cls(ofp_event.EventOFPPortStatus, CONFIG_DISPATCHER)
+    @set_ev_cls(ofp_event.EventOFPPortStatus, MAIN_DISPATCHER)
     def port_status_handler(self, ev):
-        pass
-        #msg = ev.msg
-        #dp = msg.datapath
-        #ofp = dp.ofproto
-        #portname = msg.desc.name
-        #dpid = dp.id
-        #if msg.reason == ofp.OFPPR_ADD:
-        #    reason = 'ADD'
-        #    self.add_flow_for_port(portname,dp)
-        #elif msg.reason == ofp.OFPPR_DELETE:
-        #    reason = 'DELETE'
-        #    self.remove_flows_for_port(portname,dp)
-        #elif msg.reason == ofp.OFPPR_MODIFY:
-        #    reason = 'MODIFY'
-        #else:
-        #    reason = 'unknown'
+        logging.info("Handling port status change")
+        msg = ev.msg
+        dp = msg.datapath
+        ofp = dp.ofproto
+        dpid = msg.datapath.id
+        if (dpid != 0x10): # Mesh-node, not a gateway - WLG a gateway does not have local IoT-Boards
+            node = self.mesh_node[dpid]
+            if node is not None:
+                if(msg.reason == ofp.OFPPR_ADD):
+                    node.onPortAdded(msg.desc.name,dpid)
+                elif(ofp.OFPPR_DELETE):
+                    node.onPortRemoved(msg.desc.name,dpid)
+                #elif msg.reason == ofp.OFPPR_MODIFY:
+                #    reason = 'MODIFY'
+                #else:
+                #    reason = 'unknown'
+
+    @set_ev_cls(ofp_event.EventOFPMsgBase, MAIN_DISPATCHER)
+    def generic_event(self, ev):
+        logging.info("Got event; '%s", ev)

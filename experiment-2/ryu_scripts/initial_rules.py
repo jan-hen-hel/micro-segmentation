@@ -5,24 +5,25 @@ class InitialRulez:
         parser = datapath.ofproto_parser
 
         # Matches
-        match_broadcast = parser.OFPMatch(eth_type=0x8847)
-        match_unicast = parser.OFPMatch(eth_type=0x8848)
+        #match_broadcast = parser.OFPMatch(eth_type=0x8848)
+        match_unicast = parser.OFPMatch(eth_type=0x8847)
 
-        broadcast_instruction = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,[
-            parser.OFPActionSetField(metadata=1),
-            parser.NXActionRegMove(src_field="mpls_label",dst_field="metadata",n_bits=20, dst_ofs=1),
-            parser.OFPActionPopMpls(ethertype=0x8847),
-            parser.NXActionResubmitTable(table_id=2)])]
+        #broadcast_instruction = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,[
+        #    parser.OFPActionSetField(metadata=1),
+        #    parser.NXActionRegMove(src_field="mpls_label",dst_field="metadata",n_bits=20, dst_ofs=1),
+        #    parser.OFPActionPopMpls(ethertype=0x8847),
+        #    parser.NXActionResubmitTable(table_id=2)])]
 
         unicast_instruction = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,[
-            parser.OFPActionSetField(metadata=0),
-            parser.NXActionRegMove(src_field="mpls_label",dst_field="metadata",n_bits=20, dst_ofs=1),
+        #    parser.OFPActionSetField(metadata=0),
+        #    parser.NXActionRegMove(src_field="mpls_label",dst_field="metadata",n_bits=20, dst_ofs=1),
+            parser.NXActionRegMove(src_field="mpls_label",dst_field="metadata",n_bits=20, dst_ofs=0), # vlan_id
             parser.OFPActionPopMpls(ethertype=0x8847),
             parser.NXActionResubmitTable(table_id=2)])]
 
-        broadcast_msg = parser.OFPFlowMod(datapath=datapath, priority=0,table_id=1, match=match_broadcast, instructions=broadcast_instruction)
+        #broadcast_msg = parser.OFPFlowMod(datapath=datapath, priority=0,table_id=1, match=match_broadcast, instructions=broadcast_instruction)
         unicast_msg = parser.OFPFlowMod(datapath=datapath, priority=0,table_id=1, match=match_unicast, instructions=unicast_instruction)
-        datapath.send_msg(broadcast_msg)
+        #datapath.send_msg(broadcast_msg)
         datapath.send_msg(unicast_msg)
 
 
