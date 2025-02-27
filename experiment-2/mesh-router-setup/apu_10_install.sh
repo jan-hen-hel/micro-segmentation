@@ -23,4 +23,5 @@ uci set network.iot.ipaddr='198.19.4.10'
 uci commit network
 
 echo "Script completed. Rebooting to apply uci-settings"
+ovs-vsctl set Bridge iot other-config:datapath-id=0x10
 reboot
