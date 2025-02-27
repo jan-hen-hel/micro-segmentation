@@ -1,4 +1,4 @@
-IP-Addresses handed out by the DHCP-service on APU-11
+IP-Addresses handed out by the DHCP-service on APU-10
 
 APU-20: 198.19.4.178
 APU-21: 198.19.4.170
