@@ -1,0 +1,680 @@
+Note: Below is the full console log with debugging output when establishing a connection to apu-11
+The important lines for setting the group key are:
+
+wlan0: WPA: RX message 1 of Group Key Handshake from 02:0a:52:0b:a1:ba (ver=2)
+wlan0: State: GROUP_HANDSHAKE -> GROUP_HANDSHAKE
+WPA: Group Key - hexdump(len=16): e2 e9 d1 b7 7b 80 16 7f 49 06 a3 d1 10 6e 83 ca
+wlan0: WPA: Installing GTK to the driver (keyidx=1 tx=0 len=16)
+
+# Full log
+
+# wpa_supplicant -dd -K -i wlan0 -c wpa_supplicant.conf
+
+wpa_supplicant v2.10
+random: getrandom() support available
+Successfully initialized wpa_supplicant
+Initializing interface 'wlan0' conf 'wpa_supplicant.conf' driver 'default' ctrl_interface 'N/A' bridge 'N/A'
+Configuration file 'wpa_supplicant.conf' -> '/root/wpa_supplicant.conf'
+Reading configuration file '/root/wpa_supplicant.conf'
+Line: 3 - start of a new network block
+ssid - hexdump_ascii(len=14):
+     69 6f 74 2d 6c 61 6e 2d 61 70 75 2d 31 31         iot-lan-apu-11
+PSK (ASCII passphrase) - hexdump_ascii(len=8):
+     72 70 69 33 2d 70 73 6b                           rpi3-psk
+PSK (from passphrase) - hexdump(len=32): a8 37 91 d7 a8 5e e9 28 00 11 ab f3 f3 e8 7c f0 57 e3 0c 47 a7 ca 47 6d cd 1c 47 88 1a 97 bb e4
+Priority group 0
+   id=0 ssid='iot-lan-apu-11'
+nl80211: Supported cipher 00-0f-ac:1
+nl80211: Supported cipher 00-0f-ac:5
+nl80211: Supported cipher 00-0f-ac:2
+nl80211: Supported cipher 00-0f-ac:4
+nl80211: Using driver-based off-channel TX
+nl80211: Supported vendor command: vendor_id=0x1018 subcmd=1
+nl80211: Use separate P2P group interface (driver advertised support)
+nl80211: Enable multi-channel concurrent (driver advertised support)
+nl80211: use P2P_DEVICE support
+nl80211: key_mgmt=0xd0f enc=0xf auth=0x7 flags=0x3800fac0 rrm_flags=0x0 probe_resp_offloads=0x0 max_stations=0 max_remain_on_chan=5000 max_scan_ssids=10
+nl80211: interface wlan0 in phy phy0
+nl80211: Set mode ifindex 3 iftype 2 (STATION)
+nl80211: Subscribe to mgmt frames with non-AP handle 0x556f5b3930
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0104 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 01 04
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=040a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 04 0a
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=040b multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 04 0b
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=040c multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 04 0c
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=040d multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 04 0d
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=090a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 09 0a
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=090b multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 09 0b
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=090c multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 09 0c
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=090d multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 09 0d
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0409506f9a09 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=6): 04 09 50 6f 9a 09
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=7f506f9a09 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=5): 7f 50 6f 9a 09
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0409506f9a1a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=6): 04 09 50 6f 9a 1a
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0800 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 08 00
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0801 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 08 01
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=12 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=1): 12
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=06 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=1): 06
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0a07 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 0a 07
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0a11 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 0a 11
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0a0b multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 0a 0b
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0a1a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 0a 1a
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=1101 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 11 01
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=1102 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 11 02
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0505 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 05 05
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0500 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 05 00
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=1301 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 13 01
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=1305 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 13 05
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=7e506f9a1a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=5): 7e 50 6f 9a 1a
+nl80211: Failed to register Action frame processing - ignore for now
+rfkill: initial event: idx=1 type=1 op=0 soft=0 hard=0
+netlink: Operstate: ifindex=3 linkmode=1 (userspace-control), operstate=5 (IF_OPER_DORMANT)
+Add interface wlan0 to a new radio phy0
+nl80211: Regulatory information - country=NO (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-71000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+wlan0: Own MAC address: b8:27:eb:01:4c:9d
+wpa_driver_nl80211_set_key: ifindex=3 (wlan0) alg=0 addr=(nil) key_idx=0 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+nl80211: DEL_KEY
+   broadcast key
+wpa_driver_nl80211_set_key: ifindex=3 (wlan0) alg=0 addr=(nil) key_idx=1 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+nl80211: DEL_KEY
+   broadcast key
+wpa_driver_nl80211_set_key: ifindex=3 (wlan0) alg=0 addr=(nil) key_idx=2 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+nl80211: DEL_KEY
+   broadcast key
+wpa_driver_nl80211_set_key: ifindex=3 (wlan0) alg=0 addr=(nil) key_idx=3 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+nl80211: DEL_KEY
+   broadcast key
+wpa_driver_nl80211_set_key: ifindex=3 (wlan0) alg=0 addr=(nil) key_idx=4 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+nl80211: DEL_KEY
+   broadcast key
+nl80211: set_key failed; err=-22 Invalid argument
+wpa_driver_nl80211_set_key: ifindex=3 (wlan0) alg=0 addr=(nil) key_idx=5 set_tx=0 seq_len=0 key_len=0 key_flag=0x10
+nl80211: DEL_KEY
+   broadcast key
+nl80211: set_key failed; err=-22 Invalid argument
+wlan0: RSN: flushing PMKID list in the driver
+nl80211: Flush PMKIDs
+TDLS: TDLS operation not supported by driver
+TDLS: Driver uses internal link setup
+TDLS: Driver does not support TDLS channel switching
+wlan0: WPS: UUID based on MAC address: 0831a2e8-4029-50b3-8a42-eba1ea072476
+ENGINE: Loading builtin engines
+ENGINE: Loading builtin engines
+EAPOL: SUPP_PAE entering state DISCONNECTED
+EAPOL: Supplicant port status: Unauthorized
+nl80211: Skip set_supp_port(unauthorized) while not associated
+EAPOL: KEY_RX entering state NO_KEY_RECEIVE
+EAPOL: SUPP_BE entering state INITIALIZE
+EAP: EAP entering state DISABLED
+MBO: Update non-preferred channels, non_pref_chan=N/A
+wlan0: Added interface wlan0
+wlan0: State: DISCONNECTED -> DISCONNECTED
+nl80211: Set wlan0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+nl80211: Create interface iftype 10 (P2P_DEVICE)
+Failed to create interface p2p-dev-wlan0: -16 (Device or resource busy)
+nl80211: Failed to create a P2P Device interface p2p-dev-wlan0
+P2P: Failed to create P2P Device interface
+P2P: Failed to enable P2P Device interface
+RTM_NEWLINK: ifi_index=3 ifname=wlan0 operstate=5 linkmode=0 ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlan0 operstate=5 linkmode=1 ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+wlan0: Starting delayed sched scan
+wlan0: Use normal scan instead of sched_scan for initial scans (normal_scans=0)
+wlan0: Setting scan request: 0.000000 sec
+wlan0: State: DISCONNECTED -> SCANNING
+wlan0: Starting AP scan for wildcard SSID
+wlan0: Add radio work 'scan'@0x556f6209c0
+wlan0: First radio work item in the queue - schedule start immediately
+wlan0: Starting radio work 'scan'@0x556f6209c0 after 0.000020 second wait
+wlan0: nl80211: scan request
+nl80211: Scan SSID
+nl80211: Scan extra IEs - hexdump(len=24): 7f 0b 00 00 0a 02 00 40 40 00 00 01 20 72 00 dd 07 50 6f 9a 16 03 01 03
+Scan requested (ret=0) - scan timeout 10 seconds
+nl80211: Event message available
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlan0
+wlan0: nl80211: Scan trigger
+wlan0: Event SCAN_STARTED (47) received
+wlan0: Own scan request started a scan in 0.000219 seconds
+RTM_NEWLINK: ifi_index=3 ifname=wlan0 wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+nl80211: Event message available
+nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlan0
+wlan0: nl80211: New scan results available
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472
+wlan0: Event SCAN_RESULTS (3) received
+wlan0: Scan completed in 0.564674 seconds
+nl80211: Received scan results (30 BSSes)
+wlan0: BSS: Start scan result update 1
+wlan0: BSS: Add new id 0 BSSID 00:0a:52:0b:a1:b8 SSID 'apu-10-lan' freq 2412
+wlan0: BSS: Add new id 1 BSSID 02:0a:52:0b:a1:b8 SSID 'iot-lan-apu-10' freq 2412
+wlan0: BSS: Add new id 2 BSSID 02:0a:52:0b:a1:ba SSID 'iot-lan-apu-11' freq 2437
+wlan0: BSS: Add new id 3 BSSID a4:2b:b0:a5:ae:76 SSID 'CRNAlab' freq 2412
+wlan0: BSS: Add new id 4 BSSID 00:0a:52:0b:a1:ba SSID 'apu-11-lan' freq 2437
+wlan0: BSS: Add new id 5 BSSID 46:b7:46:02:0e:35 SSID 'SmartHomeLab-Mgmt' freq 2412
+wlan0: BSS: Add new id 6 BSSID 42:b7:46:02:0e:35 SSID 'SmartHomeLab' freq 2412
+wlan0: BSS: Add new id 7 BSSID a8:3a:79:93:05:a2 SSID 'eduroam' freq 2462
+wlan0: BSS: Add new id 8 BSSID 00:0a:52:0b:2d:7a SSID 'apu-12-lan' freq 2467
+wlan0: BSS: Add new id 9 BSSID 98:8f:00:8e:05:f1 SSID '' freq 2412
+wlan0: BSS: Add new id 10 BSSID 98:8f:00:8e:05:f3 SSID 'MT-Cast' freq 2412
+wlan0: BSS: Add new id 11 BSSID 98:8f:00:8e:05:f2 SSID 'MT-internt' freq 2412
+wlan0: BSS: Add new id 12 BSSID 7a:45:58:a2:e6:c4 SSID 'M\xc3\xb8tekompaniet' freq 2462
+wlan0: BSS: Add new id 13 BSSID 7a:45:58:b2:e6:c4 SSID '' freq 2462
+wlan0: BSS: Add new id 14 BSSID 78:45:58:b2:e6:c4 SSID 'Compass Group' freq 2462
+wlan0: BSS: Add new id 15 BSSID 6c:8b:d3:5b:82:21 SSID 'Ansatt-Norden' freq 2437
+wlan0: BSS: Add new id 16 BSSID 6c:8b:d3:5b:82:20 SSID 'Visit-Norden' freq 2437
+wlan0: BSS: Add new id 17 BSSID 0c:fe:5d:90:99:89 SSID 'Celerway0cfe5d909987' freq 2447
+wlan0: BSS: Add new id 18 BSSID 0c:fe:5d:90:9a:0d SSID 'Celerway0cfe5d909987' freq 2437
+wlan0: BSS: Add new id 19 BSSID 98:8f:00:8c:cd:63 SSID 'MT-internt' freq 2462
+wlan0: BSS: Add new id 20 BSSID 78:45:58:b2:ea:b4 SSID 'Compass Group' freq 2412
+wlan0: BSS: Add new id 21 BSSID 98:8f:00:8c:cd:62 SSID 'MT-Cast' freq 2462
+wlan0: BSS: Add new id 22 BSSID 7a:45:58:a2:fb:af SSID 'M\xc3\xb8tekompaniet' freq 2412
+wlan0: BSS: Add new id 23 BSSID 7a:45:58:b2:fb:af SSID '' freq 2412
+wlan0: BSS: Add new id 24 BSSID 00:0c:e6:83:ef:81 SSID 'SF-Gjest' freq 2437
+wlan0: BSS: Add new id 25 BSSID a8:3a:79:93:05:a1 SSID 'OsloMet Guest' freq 2462
+wlan0: BSS: Add new id 26 BSSID 98:8f:00:8e:05:f0 SSID 'MT-gjest' freq 2412
+wlan0: BSS: Add new id 27 BSSID 98:8f:00:8c:cd:60 SSID 'MT-gjest' freq 2462
+wlan0: BSS: Add new id 28 BSSID a8:3a:79:93:6b:e1 SSID 'OsloMet Guest' freq 2437
+wlan0: BSS: Add new id 29 BSSID a8:3a:79:93:0a:21 SSID 'OsloMet Guest' freq 2412
+BSS: last_scan_res_used=30/32
+wlan0: New scan results available (own=1 ext=0)
+wlan0: Radio work 'scan'@0x556f6209c0 done in 0.599424 seconds
+wlan0: radio_work_free('scan'@0x556f6209c0): num_active_works --> 0
+wlan0: Selecting BSS from priority group 0
+wlan0: 0: 00:0a:52:0b:a1:b8 ssid='apu-10-lan' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-23 freq=2412
+wlan0:    skip - SSID mismatch
+wlan0: 1: 02:0a:52:0b:a1:b8 ssid='iot-lan-apu-10' wpa_ie_len=0 rsn_ie_len=20 caps=0x431 level=-24 freq=2412
+wlan0:    skip - SSID mismatch
+wlan0: 2: 02:0a:52:0b:a1:ba ssid='iot-lan-apu-11' wpa_ie_len=22 rsn_ie_len=0 caps=0x431 level=-31 freq=2437
+wlan0:    selected based on WPA IE
+wlan0:    selected BSS 02:0a:52:0b:a1:ba ssid='iot-lan-apu-11'
+wlan0: Considering connect request: reassociate: 0  selected: 02:0a:52:0b:a1:ba  bssid: 00:00:00:00:00:00  pending: 00:00:00:00:00:00  wpa_state: SCANNING  ssid=0x556f5b39e0  current_ssid=(nil)
+wlan0: Request association with 02:0a:52:0b:a1:ba
+TDLS: TDLS is allowed in the target BSS
+TDLS: TDLS channel switch allowed in the target BSS
+wlan0: No ongoing scan/p2p-scan found to abort
+wlan0: Add radio work 'connect'@0x556f6209c0
+wlan0: First radio work item in the queue - schedule start immediately
+wlan0: Starting radio work 'connect'@0x556f6209c0 after 0.000051 second wait
+wlan0: WPA: clearing own WPA/RSN IE
+wlan0: RSN: clearing own RSNXE
+RSN: PMKSA cache search - network_ctx=0x556f5b39e0 try_opportunistic=0 akmp=0x0
+RSN: Search for BSSID 02:0a:52:0b:a1:ba
+RSN: No PMKSA cache entry found
+wlan0: WPA: using IEEE 802.11i/D3.0
+wlan0: WPA: Selected cipher suites: group 16 pairwise 16 key_mgmt 2 proto 1
+wlan0: WPA: Selected mgmt group cipher 0
+WPA: set AP WPA IE - hexdump(len=24): dd 16 00 50 f2 01 01 00 00 50 f2 04 01 00 00 50 f2 04 01 00 00 50 f2 02
+wlan0: WPA: clearing AP RSN IE
+wlan0: WPA: clearing AP RSNXE
+wlan0: WPA: AP group 0x10 network profile group 0x18; available group 0x10
+wlan0: WPA: using GTK CCMP
+wlan0: WPA: AP pairwise 0x10 network profile pairwise 0x18; available pairwise 0x10
+wlan0: WPA: using PTK CCMP
+wlan0: WPA: AP key_mgmt 0x2 network profile key_mgmt 0x3; available key_mgmt 0x2
+wlan0: WPA: using KEY_MGMT WPA-PSK
+wlan0: WPA: AP mgmt_group_cipher 0x0 network profile mgmt_group_cipher 0x0; available mgmt_group_cipher 0x0
+wlan0: WPA: not using MGMT group cipher
+WPA: Set own WPA IE default - hexdump(len=24): dd 16 00 50 f2 01 01 00 00 50 f2 04 01 00 00 50 f2 04 01 00 00 50 f2 02
+RSN: Set own RSNXE default - hexdump(len=0):
+PSK (set in config) - hexdump(len=32): a8 37 91 d7 a8 5e e9 28 00 11 ab f3 f3 e8 7c f0 57 e3 0c 47 a7 ca 47 6d cd 1c 47 88 1a 97 bb e4
+WPA: Set PMK based on external data - hexdump(len=32): a8 37 91 d7 a8 5e e9 28 00 11 ab f3 f3 e8 7c f0 57 e3 0c 47 a7 ca 47 6d cd 1c 47 88 1a 97 bb e4
+wlan0: Automatic auth_alg selection: 0x1
+Added supported operating classes IE - hexdump(len=4): 3b 02 51 51
+wlan0: Trying to associate with 02:0a:52:0b:a1:ba (SSID='iot-lan-apu-11' freq=2437 MHz)
+wlan0: Cancelling scan request
+wlan0: State: SCANNING -> ASSOCIATING
+nl80211: Set wlan0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+Limit connection to BSSID 02:0a:52:0b:a1:ba freq=2437 MHz based on scan results (bssid_set=0 wps=0)
+nl80211: Set mode ifindex 3 iftype 2 (STATION)
+nl80211: Unsubscribe mgmt frames handle 0x888888dde7d3b1b9 (mode change)
+nl80211: Subscribe to mgmt frames with non-AP handle 0x556f5b3930
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0104 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 01 04
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=040a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 04 0a
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=040b multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 04 0b
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=040c multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 04 0c
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=040d multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 04 0d
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=090a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 09 0a
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=090b multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 09 0b
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=090c multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 09 0c
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=090d multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 09 0d
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0409506f9a09 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=6): 04 09 50 6f 9a 09
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=7f506f9a09 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=5): 7f 50 6f 9a 09
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0409506f9a1a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=6): 04 09 50 6f 9a 1a
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0800 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 08 00
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0801 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 08 01
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=12 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=1): 12
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=06 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=1): 06
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0a07 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 0a 07
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0a11 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 0a 11
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0a0b multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 0a 0b
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0a1a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 0a 1a
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=1101 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 11 01
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=1102 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 11 02
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0505 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 05 05
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=0500 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 05 00
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=1301 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 13 01
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=1305 multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=2): 13 05
+nl80211: Register frame type=0xd0 (WLAN_FC_STYPE_ACTION) nl_handle=0x556f5b3930 match=7e506f9a1a multicast=0
+nl80211: kernel reports: Match already configured
+nl80211: Register frame command failed (type=208): ret=-114 (Operation already in progress)
+nl80211: Register frame match - hexdump(len=5): 7e 50 6f 9a 1a
+nl80211: Failed to register Action frame processing - ignore for now
+nl80211: Key management set PSK
+nl80211: Connect (ifindex=3)
+  * bssid=02:0a:52:0b:a1:ba
+  * bssid_hint=02:0a:52:0b:a1:ba
+  * freq=2437
+  * freq_hint=2437
+  * SSID=iot-lan-apu-11
+  * IEs - hexdump(len=41): 7f 0b 00 00 0a 02 00 40 40 00 00 01 20 dd 16 00 50 f2 01 01 00 00 50 f2 04 01 00 00 50 f2 04 01 00 00 50 f2 02 3b 02 51 51
+  * WPA Versions 0x1
+  * pairwise=0xfac04
+  * group=0xfac04
+  * akm=0xfac02
+  * htcaps - hexdump(len=26): 63 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  * htcaps_mask - hexdump(len=26): 63 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  * vhtcaps - hexdump(len=12): 00 00 00 00 00 00 00 00 00 00 00 00
+  * vhtcaps_mask - hexdump(len=12): 00 00 00 00 00 00 00 00 00 00 00 00
+  * Auth Type 0
+nl80211: Connect request send successfully
+wlan0: Setting authentication timeout: 10 sec 0 usec
+Not configuring frame filtering - BSS 00:00:00:00:00:00 is not a Hotspot 2.0 network
+EAPOL: External notification - EAP success=0
+EAPOL: External notification - EAP fail=0
+EAPOL: External notification - portControl=Auto
+l2_packet_receive: src=02:0a:52:0b:a1:ba len=99
+wlan0: RX EAPOL from 02:0a:52:0b:a1:ba
+RX EAPOL - hexdump(len=99): 01 03 00 5f fe 00 8a 00 10 00 00 00 00 00 00 00 01 25 31 58 f9 00 90 00 9b de a8 5c fe f9 82 fc 90 93 60 21 3d 2c d5 b0 56 37 27 9c 89 be f8 28 71 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+wlan0: Not associated - Delay processing of received EAPOL frame (state=ASSOCIATING bssid=00:00:00:00:00:00)
+nl80211: Event message available
+nl80211: Drv Event 46 (NL80211_CMD_CONNECT) received for wlan0
+nl80211: Connect event (status=0 ignore_next_local_disconnect=0)
+nl80211: Associated on 2437 MHz
+nl80211: Associated with 02:0a:52:0b:a1:ba
+nl80211: Operating frequency for the associated BSS from scan results: 2437 MHz
+nl80211: Associated on 2437 MHz
+nl80211: Associated with 02:0a:52:0b:a1:ba
+nl80211: Set drv->ssid based on scan res info to 'iot-lan-apu-11'
+wlan0: Event ASSOC (0) received
+wlan0: Association info event
+req_ies - hexdump(len=110): 00 0e 69 6f 74 2d 6c 61 6e 2d 61 70 75 2d 31 31 01 08 8c 12 98 24 b0 48 60 6c 21 02 03 15 24 02 01 0d 2d 1a 21 00 1f ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 dd 09 00 10 18 02 00 00 00 00 00 dd 16 00 50 f2 01 01 00 00 50 f2 04 01 00 00 50 f2 04 01 00 00 50 f2 02 dd 07 00 50 f2 02 00 01 00 00 e0 ff a5
+resp_ies - hexdump(len=170): 01 08 8c 12 98 24 b0 48 60 6c 2d 1a ed 09 17 ff ff 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 3d 16 06 00 15 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 1c 23 05 00 08 1a 44 10 02 20 0e 92 0f 01 af 08 00 0c 00 fa ff fa ff 39 1c c7 71 1c 07 ff 07 24 f4 3f 00 21 fc ff ff 02 27 03 ff 0e 26 00 08 a9 ff 2f a9 ff 45 75 ff 65 75 ff 7f 0a 04 00 00 02 01 00 01 40 00 40 5a 03 24 01 00 dd 18 00 50 f2 02 01 01 80 00 03 a4 00 00 27 a4 00 00 42 43 5e 00 62 32 2f 00 05 01 00 00 00 00
+IEEE 802.11 element parsing ignored unknown element extension (ext_id=39 elen=1)
+IEEE 802.11 element parsing ignored unknown element extension (ext_id=38 elen=13)
+IEEE 802.11 element parse failed @1
+IEs - hexdump(len=170): 01 08 8c 12 98 24 b0 48 60 6c 2d 1a ed 09 17 ff ff 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 3d 16 06 00 15 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 1c 23 05 00 08 1a 44 10 02 20 0e 92 0f 01 af 08 00 0c 00 fa ff fa ff 39 1c c7 71 1c 07 ff 07 24 f4 3f 00 21 fc ff ff 02 27 03 ff 0e 26 00 08 a9 ff 2f a9 ff 45 75 ff 65 75 ff 7f 0a 04 00 00 02 01 00 01 40 00 40 5a 03 24 01 00 dd 18 00 50 f2 02 01 01 80 00 03 a4 00 00 27 a4 00 00 42 43 5e 00 62 32 2f 00 05 01 00 00 00 00
+IEEE 802.11 element parsing ignored unknown element extension (ext_id=39 elen=1)
+IEEE 802.11 element parsing ignored unknown element extension (ext_id=38 elen=13)
+IEEE 802.11 element parse failed @1
+IEs - hexdump(len=170): 01 08 8c 12 98 24 b0 48 60 6c 2d 1a ed 09 17 ff ff 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 3d 16 06 00 15 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 1c 23 05 00 08 1a 44 10 02 20 0e 92 0f 01 af 08 00 0c 00 fa ff fa ff 39 1c c7 71 1c 07 ff 07 24 f4 3f 00 21 fc ff ff 02 27 03 ff 0e 26 00 08 a9 ff 2f a9 ff 45 75 ff 65 75 ff 7f 0a 04 00 00 02 01 00 01 40 00 40 5a 03 24 01 00 dd 18 00 50 f2 02 01 01 80 00 03 a4 00 00 27 a4 00 00 42 43 5e 00 62 32 2f 00 05 01 00 00 00 00
+IEEE 802.11 element parsing ignored unknown element extension (ext_id=39 elen=1)
+IEEE 802.11 element parsing ignored unknown element extension (ext_id=38 elen=13)
+IEEE 802.11 element parse failed @1
+IEs - hexdump(len=170): 01 08 8c 12 98 24 b0 48 60 6c 2d 1a ed 09 17 ff ff 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 3d 16 06 00 15 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 1c 23 05 00 08 1a 44 10 02 20 0e 92 0f 01 af 08 00 0c 00 fa ff fa ff 39 1c c7 71 1c 07 ff 07 24 f4 3f 00 21 fc ff ff 02 27 03 ff 0e 26 00 08 a9 ff 2f a9 ff 45 75 ff 65 75 ff 7f 0a 04 00 00 02 01 00 01 40 00 40 5a 03 24 01 00 dd 18 00 50 f2 02 01 01 80 00 03 a4 00 00 27 a4 00 00 42 43 5e 00 62 32 2f 00 05 01 00 00 00 00
+wlan0: freq=2437 MHz
+WPA: set own WPA/RSN IE - hexdump(len=24): dd 16 00 50 f2 01 01 00 00 50 f2 04 01 00 00 50 f2 04 01 00 00 50 f2 02
+Truncated IE in assoc_info - hexdump(len=4): 00 e0 ff a5
+wlan0: RSN: clearing own RSNXE
+wlan0: State: ASSOCIATING -> ASSOCIATED
+nl80211: Set wlan0 operstate 0->0 (DORMANT)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=5 (IF_OPER_DORMANT)
+wlan0: Associated to a new BSS: BSSID=02:0a:52:0b:a1:ba
+WPA: Update cipher suite selection based on IEs in driver-generated WPA/RSNE in AssocReq - hexdump(len=37): dd 16 00 50 f2 01 01 00 00 50 f2 04 01 00 00 50 f2 04 01 00 00 50 f2 02 dd 07 00 50 f2 02 00 01 00 00 e0 ff a5
+wlan0: WPA: AP key_mgmt 0x2 network key_mgmt 0x3; available key_mgmt 0x2
+wlan0: WPA: using KEY_MGMT WPA-PSK and proto 1
+wlan0: WPA: AP pairwise cipher 0x10 network pairwise cipher 0x18; available pairwise cipher 0x10
+wlan0: WPA: using PTK CCMP
+wlan0: WPA: AP group cipher 0x10 network group cipher 0x18; available group cipher 0x10
+wlan0: WPA: using GTK CCMP
+wlan0: WPA: AP mgmt_group_cipher 0x0 network mgmt_group_cipher 0x0; available mgmt_group_cipher 0x0
+wlan0: WPA: STA/AP is not MFP capable; AP RSNE caps 0x0
+wlan0: WPA: not using MGMT group cipher
+wlan0: Associated with 02:0a:52:0b:a1:ba
+wlan0: WPA: Association event - clear replay counter
+wlan0: WPA: Clear old PTK
+TDLS: Remove peers on association
+EAPOL: External notification - portEnabled=0
+EAPOL: External notification - portValid=0
+EAPOL: External notification - EAP success=0
+EAPOL: External notification - portEnabled=1
+EAPOL: SUPP_PAE entering state CONNECTING
+EAPOL: SUPP_BE entering state IDLE
+wlan0: Setting authentication timeout: 10 sec 0 usec
+wlan0: Cancelling scan request
+wlan0: Process pending EAPOL frame that was received just before association notification
+wlan0: RX EAPOL from 02:0a:52:0b:a1:ba
+RX EAPOL - hexdump(len=99): 01 03 00 5f fe 00 8a 00 10 00 00 00 00 00 00 00 01 25 31 58 f9 00 90 00 9b de a8 5c fe f9 82 fc 90 93 60 21 3d 2c d5 b0 56 37 27 9c 89 be f8 28 71 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+wlan0: Setting authentication timeout: 10 sec 0 usec
+wlan0: IEEE 802.1X RX: version=1 type=3 length=95
+WPA: RX EAPOL-Key - hexdump(len=99): 01 03 00 5f fe 00 8a 00 10 00 00 00 00 00 00 00 01 25 31 58 f9 00 90 00 9b de a8 5c fe f9 82 fc 90 93 60 21 3d 2c d5 b0 56 37 27 9c 89 be f8 28 71 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+wlan0:   EAPOL-Key type=254
+wlan0:   key_info 0x8a (ver=2 keyidx=0 rsvd=0 Pairwise Ack)
+wlan0:   key_length=16 key_data_length=0
+  replay_counter - hexdump(len=8): 00 00 00 00 00 00 00 01
+  key_nonce - hexdump(len=32): 25 31 58 f9 00 90 00 9b de a8 5c fe f9 82 fc 90 93 60 21 3d 2c d5 b0 56 37 27 9c 89 be f8 28 71
+  key_iv - hexdump(len=16): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  key_rsc - hexdump(len=8): 00 00 00 00 00 00 00 00
+  key_id (reserved) - hexdump(len=8): 00 00 00 00 00 00 00 00
+  key_mic - hexdump(len=16): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+wlan0: State: ASSOCIATED -> 4WAY_HANDSHAKE
+wlan0: WPA: RX message 1 of 4-Way Handshake from 02:0a:52:0b:a1:ba (ver=2)
+Get randomness: len=32 entropy=11
+WPA: Renewed SNonce - hexdump(len=32): 3d c3 cb b2 30 fe 23 53 25 97 59 90 5e 38 f5 22 70 dc 22 db 66 b5 38 9e 06 aa 48 3b 21 dd a5 cb
+WPA: PTK derivation using PRF(SHA1)
+WPA: PTK derivation - A1=b8:27:eb:01:4c:9d A2=02:0a:52:0b:a1:ba
+WPA: Nonce1 - hexdump(len=32): 3d c3 cb b2 30 fe 23 53 25 97 59 90 5e 38 f5 22 70 dc 22 db 66 b5 38 9e 06 aa 48 3b 21 dd a5 cb
+WPA: Nonce2 - hexdump(len=32): 25 31 58 f9 00 90 00 9b de a8 5c fe f9 82 fc 90 93 60 21 3d 2c d5 b0 56 37 27 9c 89 be f8 28 71
+WPA: PMK - hexdump(len=32): a8 37 91 d7 a8 5e e9 28 00 11 ab f3 f3 e8 7c f0 57 e3 0c 47 a7 ca 47 6d cd 1c 47 88 1a 97 bb e4
+WPA: PTK - hexdump(len=48): e6 22 08 55 0f d1 45 29 dd dd 5b 93 06 6d 44 3a ae f9 da ad b9 be 53 eb 80 61 a7 a6 dc f5 ca 24 0b 00 fc 3a f3 4f cd d6 65 75 e3 68 fb b2 46 87
+WPA: KCK - hexdump(len=16): e6 22 08 55 0f d1 45 29 dd dd 5b 93 06 6d 44 3a
+WPA: KEK - hexdump(len=16): ae f9 da ad b9 be 53 eb 80 61 a7 a6 dc f5 ca 24
+WPA: TK - hexdump(len=16): 0b 00 fc 3a f3 4f cd d6 65 75 e3 68 fb b2 46 87
+WPA: WPA IE for msg 2/4 - hexdump(len=24): dd 16 00 50 f2 01 01 00 00 50 f2 04 01 00 00 50 f2 04 01 00 00 50 f2 02
+WPA: Replay Counter - hexdump(len=8): 00 00 00 00 00 00 00 01
+wlan0: WPA: Sending EAPOL-Key 2/4
+WPA: Send EAPOL-Key frame to 02:0a:52:0b:a1:ba ver=2 mic_len=16 key_mgmt=0x2
+WPA: EAPOL-Key MIC using HMAC-SHA1
+WPA: KCK - hexdump(len=16): e6 22 08 55 0f d1 45 29 dd dd 5b 93 06 6d 44 3a
+WPA: Derived Key MIC - hexdump(len=16): e4 2a 9e f4 d2 9d c7 c1 b5 4e 76 ad 8c 52 4d 08
+WPA: TX EAPOL-Key - hexdump(len=123): 01 03 00 77 fe 01 0a 00 10 00 00 00 00 00 00 00 01 3d c3 cb b2 30 fe 23 53 25 97 59 90 5e 38 f5 22 70 dc 22 db 66 b5 38 9e 06 aa 48 3b 21 dd a5 cb 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 e4 2a 9e f4 d2 9d c7 c1 b5 4e 76 ad 8c 52 4d 08 00 18 dd 16 00 50 f2 01 01 00 00 50 f2 04 01 00 00 50 f2 04 01 00 00 50 f2 02
+wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+RTM_NEWLINK: ifi_index=3 ifname=wlan0 wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlan0 wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+RTM_NEWLINK: ifi_index=3 ifname=wlan0 wext ifi_family=0 ifi_flags=0x11003 ([UP][LOWER_UP])
+nl80211: Event message available
+nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) received for wlan0
+nl80211: Regulatory domain change
+ * initiator=3
+ * type=0
+ * alpha2=NO
+wlan0: Event CHANNEL_LIST_CHANGED (27) received
+wlan0: CTRL-EVENT-REGDOM-CHANGE init=COUNTRY_IE type=COUNTRY alpha2=NO
+wlan0: Updating hw mode
+nl80211: Regulatory information - country=NO (DFS-ETSI)
+nl80211: 2400-2483 @ 40 MHz 20 mBm
+nl80211: 5150-5250 @ 80 MHz 23 mBm (no outdoor)
+nl80211: 5250-5350 @ 80 MHz 20 mBm (no outdoor) (DFS)
+nl80211: 5470-5725 @ 160 MHz 26 mBm (DFS)
+nl80211: 5725-5875 @ 80 MHz 13 mBm
+nl80211: 5945-6425 @ 160 MHz 23 mBm (no outdoor)
+nl80211: 57000-71000 @ 2160 MHz 40 mBm
+nl80211: Added 802.11b mode based on 802.11g information
+nl80211: Mode IEEE 802.11g: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+nl80211: Mode IEEE 802.11b: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472 2484[DISABLED]
+l2_packet_receive: src=02:0a:52:0b:a1:ba len=123
+wlan0: RX EAPOL from 02:0a:52:0b:a1:ba
+RX EAPOL - hexdump(len=123): 01 03 00 77 fe 01 ca 00 10 00 00 00 00 00 00 00 02 25 31 58 f9 00 90 00 9b de a8 5c fe f9 82 fc 90 93 60 21 3d 2c d5 b0 56 37 27 9c 89 be f8 28 71 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 bc 9e 46 77 8c 9b 99 e2 8d 97 ec c6 cc ba 23 38 00 18 dd 16 00 50 f2 01 01 00 00 50 f2 04 01 00 00 50 f2 04 01 00 00 50 f2 02
+wlan0: IEEE 802.1X RX: version=1 type=3 length=119
+WPA: RX EAPOL-Key - hexdump(len=123): 01 03 00 77 fe 01 ca 00 10 00 00 00 00 00 00 00 02 25 31 58 f9 00 90 00 9b de a8 5c fe f9 82 fc 90 93 60 21 3d 2c d5 b0 56 37 27 9c 89 be f8 28 71 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 bc 9e 46 77 8c 9b 99 e2 8d 97 ec c6 cc ba 23 38 00 18 dd 16 00 50 f2 01 01 00 00 50 f2 04 01 00 00 50 f2 04 01 00 00 50 f2 02
+wlan0:   EAPOL-Key type=254
+wlan0:   key_info 0x1ca (ver=2 keyidx=0 rsvd=0 Pairwise Install Ack MIC)
+wlan0:   key_length=16 key_data_length=24
+  replay_counter - hexdump(len=8): 00 00 00 00 00 00 00 02
+  key_nonce - hexdump(len=32): 25 31 58 f9 00 90 00 9b de a8 5c fe f9 82 fc 90 93 60 21 3d 2c d5 b0 56 37 27 9c 89 be f8 28 71
+  key_iv - hexdump(len=16): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  key_rsc - hexdump(len=8): 00 00 00 00 00 00 00 00
+  key_id (reserved) - hexdump(len=8): 00 00 00 00 00 00 00 00
+  key_mic - hexdump(len=16): bc 9e 46 77 8c 9b 99 e2 8d 97 ec c6 cc ba 23 38
+WPA: EAPOL-Key MIC using HMAC-SHA1
+wlan0: State: 4WAY_HANDSHAKE -> 4WAY_HANDSHAKE
+wlan0: WPA: RX message 3 of 4-Way Handshake from 02:0a:52:0b:a1:ba (ver=2)
+WPA: IE KeyData - hexdump(len=24): dd 16 00 50 f2 01 01 00 00 50 f2 04 01 00 00 50 f2 04 01 00 00 50 f2 02
+WPA: WPA IE in EAPOL-Key - hexdump(len=24): dd 16 00 50 f2 01 01 00 00 50 f2 04 01 00 00 50 f2 04 01 00 00 50 f2 02
+wlan0: WPA: Sending EAPOL-Key 4/4
+WPA: Send EAPOL-Key frame to 02:0a:52:0b:a1:ba ver=2 mic_len=16 key_mgmt=0x2
+WPA: EAPOL-Key MIC using HMAC-SHA1
+WPA: KCK - hexdump(len=16): e6 22 08 55 0f d1 45 29 dd dd 5b 93 06 6d 44 3a
+WPA: Derived Key MIC - hexdump(len=16): cf 9b ba 34 49 82 61 68 c5 13 8b 53 38 14 64 8f
+WPA: TX EAPOL-Key - hexdump(len=99): 01 03 00 5f fe 01 0a 00 10 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 cf 9b ba 34 49 82 61 68 c5 13 8b 53 38 14 64 8f 00 00
+wlan0: WPA: Installing PTK to the driver
+WPA: RSC - hexdump(len=6): 00 00 00 00 00 00
+wpa_driver_nl80211_set_key: ifindex=3 (wlan0) alg=3 addr=0x556f5d9bc0 key_idx=0 set_tx=1 seq_len=6 key_len=16 key_flag=0x2c
+nl80211: NEW_KEY
+nl80211: KEY_DATA - hexdump(len=16): 0b 00 fc 3a f3 4f cd d6 65 75 e3 68 fb b2 46 87
+nl80211: KEY_SEQ - hexdump(len=6): 00 00 00 00 00 00
+   addr=02:0a:52:0b:a1:ba
+   pairwise key
+wlan0: State: 4WAY_HANDSHAKE -> GROUP_HANDSHAKE
+l2_packet_receive: src=02:0a:52:0b:a1:ba len=123
+wlan0: RX EAPOL from 02:0a:52:0b:a1:ba
+RX EAPOL - hexdump(len=123): 01 03 00 77 fe 03 92 00 10 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3a be ea f4 e1 50 ba 3c f1 ac 6a af c3 24 63 6a 00 18 72 ba df f5 62 3a 65 7f ce e2 7f 7b 76 10 ec d5 a6 66 2d 75 79 0a 9f 66
+wlan0: IEEE 802.1X RX: version=1 type=3 length=119
+WPA: RX EAPOL-Key - hexdump(len=123): 01 03 00 77 fe 03 92 00 10 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3a be ea f4 e1 50 ba 3c f1 ac 6a af c3 24 63 6a 00 18 72 ba df f5 62 3a 65 7f ce e2 7f 7b 76 10 ec d5 a6 66 2d 75 79 0a 9f 66
+wlan0:   EAPOL-Key type=254
+wlan0:   key_info 0x392 (ver=2 keyidx=1 rsvd=0 Group Ack MIC Secure)
+wlan0:   key_length=16 key_data_length=24
+  replay_counter - hexdump(len=8): 00 00 00 00 00 00 00 03
+  key_nonce - hexdump(len=32): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  key_iv - hexdump(len=16): 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  key_rsc - hexdump(len=8): 00 00 00 00 00 00 00 00
+  key_id (reserved) - hexdump(len=8): 00 00 00 00 00 00 00 00
+  key_mic - hexdump(len=16): 3a be ea f4 e1 50 ba 3c f1 ac 6a af c3 24 63 6a
+WPA: EAPOL-Key MIC using HMAC-SHA1
+wlan0: WPA: RX message 1 of Group Key Handshake from 02:0a:52:0b:a1:ba (ver=2)
+wlan0: State: GROUP_HANDSHAKE -> GROUP_HANDSHAKE
+WPA: Group Key - hexdump(len=16): e2 e9 d1 b7 7b 80 16 7f 49 06 a3 d1 10 6e 83 ca
+wlan0: WPA: Installing GTK to the driver (keyidx=1 tx=0 len=16)
+WPA: RSC - hexdump(len=6): 00 00 00 00 00 00
+wpa_driver_nl80211_set_key: ifindex=3 (wlan0) alg=3 addr=0x556aeb0470 key_idx=1 set_tx=0 seq_len=6 key_len=16 key_flag=0x14
+nl80211: NEW_KEY
+nl80211: KEY_DATA - hexdump(len=16): e2 e9 d1 b7 7b 80 16 7f 49 06 a3 d1 10 6e 83 ca
+nl80211: KEY_SEQ - hexdump(len=6): 00 00 00 00 00 00
+   broadcast key
+wlan0: WPA: Sending EAPOL-Key 2/2
+WPA: Send EAPOL-Key frame to 02:0a:52:0b:a1:ba ver=2 mic_len=16 key_mgmt=0x2
+WPA: EAPOL-Key MIC using HMAC-SHA1
+WPA: KCK - hexdump(len=16): e6 22 08 55 0f d1 45 29 dd dd 5b 93 06 6d 44 3a
+WPA: Derived Key MIC - hexdump(len=16): a0 01 68 ad 4b 2f 3f fc 8e 2f 42 12 2f c2 bc e1
+WPA: TX EAPOL-Key - hexdump(len=99): 01 03 00 5f fe 03 12 00 10 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 a0 01 68 ad 4b 2f 3f fc 8e 2f 42 12 2f c2 bc e1 00 00
+wlan0: WPA: Key negotiation completed with 02:0a:52:0b:a1:ba [PTK=CCMP GTK=CCMP]
+wlan0: Cancelling authentication timeout
+wlan0: State: GROUP_HANDSHAKE -> COMPLETED
+wlan0: Radio work 'connect'@0x556f6209c0 done in 0.361382 seconds
+wlan0: radio_work_free('connect'@0x556f6209c0): num_active_works --> 0
+wlan0: CTRL-EVENT-CONNECTED - Connection to 02:0a:52:0b:a1:ba completed [id=0 id_str=]
+nl80211: Set wlan0 operstate 0->1 (UP)
+netlink: Operstate: ifindex=3 linkmode=-1 (no change), operstate=6 (IF_OPER_UP)
+EAPOL: External notification - portValid=1
+EAPOL: External notification - EAP success=1
+EAPOL: SUPP_PAE entering state AUTHENTICATING
+EAPOL: SUPP_BE entering state SUCCESS
+EAP: EAP entering state DISABLED
+EAPOL: SUPP_PAE entering state AUTHENTICATED
+EAPOL: Supplicant port status: Authorized
+nl80211: Set supplicant port authorized for 02:0a:52:0b:a1:ba
+EAPOL: SUPP_BE entering state IDLE
+EAPOL authentication completed - result=SUCCESS
+nl80211: Set rekey offload
+nl80211: Driver does not support rekey offload
+RTM_NEWLINK: ifi_index=3 ifname=wlan0 operstate=6 linkmode=1 ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
+EAPOL: startWhen --> 0
+EAPOL: disable timer tick
+nl80211: Event message available
+nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlan0
+wlan0: nl80211: Scan trigger
+wlan0: Event SCAN_STARTED (47) received
+wlan0: External program started a scan
+nl80211: Event message available
+nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlan0
+wlan0: nl80211: New scan results available
+nl80211: Scan probed for SSID ''
+nl80211: Scan included frequencies: 2412 2417 2422 2427 2432 2437 2442 2447 2452 2457 2462 2467 2472
+wlan0: Event SCAN_RESULTS (3) received
+nl80211: Received scan results (33 BSSes)
+nl80211: Scan results indicate BSS status with 02:0a:52:0b:a1:ba as associated
+wlan0: BSS: Start scan result update 2
+wlan0: BSS: Add new id 30 BSSID 7a:45:58:b2:ea:b4 SSID '' freq 2412
+wlan0: BSS: Add new id 31 BSSID 78:45:58:b2:ad:be SSID 'Compass Group' freq 2462
+wlan0: BSS: Add new id 32 BSSID a8:3a:79:92:c3:a1 SSID 'OsloMet Guest' freq 2412
+BSS: last_scan_res_used=33/64
+wlan0: New scan results available (own=0 ext=1)
+wlan0: Do not use results from externally requested scan operation for network selection
+RTM_NEWLINK: ifi_index=3 ifname=wlan0 wext ifi_family=0 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])
