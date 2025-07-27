@@ -1,0 +1,6 @@
+# Do not care about MAC-addresses. Devices are isolate by password
+
+vlanid=20 00:00:00:00:00:00 rpi3-psk
+vlanid=20 00:00:00:00:00:00 rpi4-psk
+
+
