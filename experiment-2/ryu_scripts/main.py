@@ -68,9 +68,9 @@ class MPLSIsolation(app_manager.RyuApp):
             node = self.mesh_node[dpid]
             if node is not None:
                 if(msg.reason == ofp.OFPPR_ADD):
-                    node.onPortAdded(msg.desc.name,dpid)
+                    node.onPortAdded(msg.desc.name,msg.desc.port_no)
                 elif(ofp.OFPPR_DELETE):
-                    node.onPortRemoved(msg.desc.name,dpid)
+                    node.onPortRemoved(msg.desc.name,msg.desc.port_no)
                 #elif msg.reason == ofp.OFPPR_MODIFY:
                 #    reason = 'MODIFY'
                 #else:
