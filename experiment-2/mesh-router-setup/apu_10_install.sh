@@ -24,4 +24,5 @@ uci commit network
 
 echo "Script completed. Rebooting to apply uci-settings"
 ovs-vsctl set Bridge iot other-config:datapath-id=0x10
+ovs-vsctl set-controller iot tcp:10.133.14.33:6633
 reboot
