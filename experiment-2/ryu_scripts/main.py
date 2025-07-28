@@ -28,6 +28,7 @@ from ryu.lib.packet import ether_types
 from initial_rules import InitialRulez
 from gateway import Gateway
 from mesh_node import MeshNode
+from ryu.controller import dpset
 
 import logging
 
@@ -41,25 +42,42 @@ class MPLSIsolation(app_manager.RyuApp):
         logging.info("Application loaded")
 
     # Initial connect of the switch
-    @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
-    def switch_features_handler(self, ev):
-        datapath = ev.msg.datapath
-        logging.info("OF swichting connected. Pushing initial rules. Datapath-id is: 0x%x", ev.msg.datapath_id)
+    
+    @set_ev_cls(dpset.EventDP, dpset.DPSET_EV_DISPATCHER)
+    def handle_port_info(self,ev):
+        logging.info("Handling port info: %s", ev);
+        datapath = ev.dp
+        logging.info("OF swichting connected. Pushing initial rules. ports: '%s' - datapath: '%s'", ev.ports, ev.dp)
         self.initial_rules.push(datapath)
-        if (ev.msg.datapath_id == 0x10): # Gateway is APU-10
+        if (datapath.id == 0x10): # Gateway is APU-10
             logging.info("Gateway connected")
             self.gateway = Gateway(datapath.ports)
             self.gateway.onConnect(datapath)
-        elif(ev.msg.datapath_id != 0x10): # Meshnode is APU-11
+        elif(datapath.id != 0x10): # Meshnode is APU-11
             logging.info("Meshnode connected")
-            self.mesh_node[ev.msg.datapath_id] = MeshNode(datapath)
-            self.mesh_node[ev.msg.datapath_id].onConnect()
+            self.mesh_node[datapath.id] = MeshNode(datapath)
+            self.mesh_node[datapath.id].onConnect()
+
+    #@set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
+    #def switch_features_handler(self, ev):
+    #    logging.info("EventOFPSwitchFeatures, '%s'", ev.msg)
+    #    datapath = ev.msg.datapath
+    #    logging.info("OF swichting connected. Pushing initial rules. Datapath-id is: 0x%x", ev.msg.datapath_id)
+    #    self.initial_rules.push(datapath)
+    #    if (ev.msg.datapath_id == 0x10): # Gateway is APU-10
+    #        logging.info("Gateway connected")
+    #        self.gateway = Gateway(datapath.ports)
+    #        self.gateway.onConnect(datapath)
+    #    elif(ev.msg.datapath_id != 0x10): # Meshnode is APU-11
+    #        logging.info("Meshnode connected")
+    #        self.mesh_node[ev.msg.datapath_id] = MeshNode(datapath)
+    #        self.mesh_node[ev.msg.datapath_id].onConnect()
 
 
     # Attaching Port due to Request
     @set_ev_cls(ofp_event.EventOFPPortStatus, MAIN_DISPATCHER)
     def port_status_handler(self, ev):
-        logging.info("Handling port status change")
+        logging.info("Handling port status change, '%s'", ev.msg)
         msg = ev.msg
         dp = msg.datapath
         ofp = dp.ofproto
@@ -67,9 +85,10 @@ class MPLSIsolation(app_manager.RyuApp):
         if (dpid != 0x10): # Mesh-node, not a gateway - WLG a gateway does not have local IoT-Boards
             node = self.mesh_node[dpid]
             if node is not None:
+                logging.info("Handling port %s of device id: 0x%x", msg.desc.name,msg.desc.port_no)
                 if(msg.reason == ofp.OFPPR_ADD):
                     node.onPortAdded(msg.desc.name,msg.desc.port_no)
-                elif(ofp.OFPPR_DELETE):
+                elif(msg.reason ==  ofp.OFPPR_DELETE):
                     node.onPortRemoved(msg.desc.name,msg.desc.port_no)
                 #elif msg.reason == ofp.OFPPR_MODIFY:
                 #    reason = 'MODIFY'

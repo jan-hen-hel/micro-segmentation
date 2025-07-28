@@ -15,17 +15,19 @@ class MeshNode():
     # This results in a port-vlan-duality
 
     vlan_to_mac = {
+        #b'iot_30': '28:df:eb:68:fe:89', # Lenovo Debugging Laptop
         b'iot_31': 'f8:ad:cb:03:8e:ea', # Nokia 7.1
-        b'iot_32': '1C:3B:F3:A5:51:56', # TP-Link Smart Plug
+        b'iot_33': '1C:3B:F3:A5:51:56', # TP-Link Smart Plug
         b'iot_20': '00:0A:52:06:E4:32'
     }
     # Additionally, ACL-rules (who may reach whom) are encoded statically
     # Typically, this could be changed by a User-interface 
 
     allowed_iot_traffic = {
-        b"iot_31": [b"iot_32"],
-        b"iot_32": [b"iot_31"],
-        b"iot_20": []
+        b"iot_31": [b"iot_33"],
+        b"iot_33": [b"iot_31"],
+        b"iot_20": [],
+        #b"iot_30": [b"iot_31",b"iot_33"]
     }
 
     # Before going into details, a quick strategy:
@@ -94,7 +96,6 @@ class MeshNode():
 
     # On connected is to be called when the device has connected
     # This method pushes initial rulez
-    # Note: This not not done by the constructure, to enable unit-Testing
     def onConnect(self):
         logging.info("Running on-connect")
         datapath = self.datapath
@@ -108,12 +109,12 @@ class MeshNode():
         # Traffic from gateway, i.e. id=10 is harded, it is allowed.
         # Note: Conceptionally, this rule refers to the iotupl-port, but there is no need to re-send it, because the port-number / datapath-id is not encoded
         logging.info("Pushing traffic from gateway rule")
-        incoming_gw_brodcast_match = parser.OFPMatch(metadata=0x10)
-        incoming_gw_brodcast_instruction = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,[
+        incoming_gw_match = parser.OFPMatch(metadata=0x10)
+        incoming_gw_instruction = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,[
             parser.OFPActionOutput(ofproto.OFPP_NORMAL)
         ])]
-        incoming_gw_brodcast_msg = parser.OFPFlowMod(datapath=datapath, priority=10,table_id=10, match=incoming_gw_brodcast_match, instructions=incoming_gw_brodcast_instruction)
-        datapath.send_msg(incoming_gw_brodcast_msg)
+        incoming_gw_msg = parser.OFPFlowMod(datapath=datapath, priority=10,table_id=10, match=incoming_gw_match, instructions=incoming_gw_instruction)
+        datapath.send_msg(incoming_gw_msg)
 
         # When a device connects, some iot-device may be attached already. Hence, we need to update all port-Rules
         self.__update_port_broadcast_rules()
@@ -148,6 +149,7 @@ class MeshNode():
                 parser.OFPActionOutput(port=self.iot_upl_port_num)
             ])]
             outgoing_iotupl_msg =  parser.OFPFlowMod(datapath=datapath, priority=10,table_id=11, match=outgoing_match, instructions=outgoing_instructions)
+
             datapath.send_msg(outgoing_iotupl_msg)
 
 
@@ -173,17 +175,20 @@ class MeshNode():
         parser = datapath.ofproto_parser
         vlan_to_connected_destination_ports = {}
         for vlan in self.allowed_iot_traffic.keys(): # Take care of all "known" vlans, e.g. ports that traffic can originate from
-            logging.info("Establing rules for: %s", vlan)
+            #logging.info("Establing rules for: %s", vlan)
             target_ports = [] # Contruct set iterativly by adding destination ports for switching
             for target in MeshNode.allowed_iot_traffic[vlan]: # Iterate over possible targets
-                logging.info("Checking target: %s",target)
+                #logging.info("Checking target: %s",target)
                 if target in self.connected_vlans: # Connected Port
-                    logging.info("Target is connected locally")
+                    #logging.info("Target is connected locally")
                     target_port = self.connected_vlans[target] # is the port connected? If not, no problem. Broadcast-Traffic will be forwarded to the mesh / gateway anyway
                     target_ports += [target_port] # Add List to the target ports
-                else:
-                    logging.info("Target is not connected locally")
+                #else:
+                    #logging.info("Target is not connected locally")
             vlan_to_connected_destination_ports[vlan] = target_ports
+
+        logging.info("Locally connected VLANs: '%s'", self.connected_vlans)
+        logging.info("This is the reachability-matrix now '%s'",vlan_to_connected_destination_ports)
 
         # After created a list of all connected_destination by vlan, implement the following strategy
         # 1. For each VLAN with connected ports, switch Mesh-traffic to connected destination ports.
@@ -193,12 +198,12 @@ class MeshNode():
         for vlan in self.allowed_iot_traffic.keys():
             #logging.info("Handling vlan: %s",vlan)
             if vlan in vlan_to_connected_destination_ports:
-                logging.info("%s has conencted ports", vlan)
+                #logging.info("%s has connected ports", vlan)
                 connected_target_ports = vlan_to_connected_destination_ports[vlan]
                 match = parser.OFPMatch(metadata=self.__vlan_id(vlan),eth_dst=("01:00:00:00:00:00","01:00:00:00:00:00"))
                 output_actions = []
                 for port in connected_target_ports:
-                    #logging.info("port: '%s' is locally connected", port)
+                    logging.info("port: '%s' is locally connected", port)
                     output_actions += [parser.OFPActionOutput(port)]
                 #logging.info("Sending rule for incoming broadcast-traffic")
                 datapath.send_msg(parser.OFPFlowMod(datapath=datapath, table_id=10, match=match, priority=10, instructions=[parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,output_actions)]))
@@ -215,8 +220,9 @@ class MeshNode():
                 for possible_destination_port in whitelist:
                     logging.info("Handling allowed destination %s", possible_destination_port)
                     if possible_destination_port in self.connected_vlans:
-                        logging.info("Destination is locally connected")
-                        output_actions += [parser.OFPActionOutput(port)]
+
+                        logging.info("Destination port %d is locally connected", self.connected_vlans[possible_destination_port] )
+                        output_actions += [parser.OFPActionOutput(self.connected_vlans[possible_destination_port])]
                     else:
                         logging.info("Destination is not locally connected")
             logging.info("Sending output rule accorind to ports an mesh")
@@ -224,8 +230,22 @@ class MeshNode():
             output_actions += [parser.OFPActionSetField(reg0=vlanid)]
             output_actions += [parser.NXActionResubmitTable(table_id=11)] # Resumbit to table 11 for MPLS tagging and sending to mesh
             src_mac=self.vlan_to_mac[source_port]
-            vlan_match = parser.OFPMatch(in_port=vlanid,eth_src=src_mac,eth_dst=("01:00:00:00:00:00","01:00:00:00:00:00"))
+            vlan_match = parser.OFPMatch(in_port=self.connected_vlans[source_port],eth_src=src_mac,eth_dst=("01:00:00:00:00:00","01:00:00:00:00:00"))
             datapath.send_msg(parser.OFPFlowMod(datapath=datapath, table_id=0, priority=10, match=vlan_match, instructions=[parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,output_actions)]))
+                # Brodcast-Traffic from gateway - output on all ports
+
+#        output_actions_gw = []
+ #       incoming_gw_match = parser.OFPMatch(metadata=0x10, eth_dst=("01:00:00:00:00:00","01:00:00:00:00:00"))
+ #       logging.info("Updating rules - connected VLANs are: %s", self.connected_vlans)
+ #       for vlan in self.connected_vlans:
+ #           logging.info("Connecting VLANs, %s", vlan)
+ #           output_actions_gw += [parser.OFPActionOutput(port=self.connected_vlans[vlan])]
+ #       
+ #       incoming_gw_instruction = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,output_actions_gw)]
+ #       incoming_gw_msg = parser.OFPFlowMod(datapath=datapath, priority=11,table_id=10, match=incoming_gw_match, instructions=incoming_gw_instruction)
+ #       datapath.send_msg(incoming_gw_msg)
+
+
 
     # Adapt unicast port rules to a new configuration
     def __update_port_unicast_rules(self):
@@ -236,10 +256,8 @@ class MeshNode():
         
         # Traffic from connected IoT-devices
         # 1. Unicast-Traffic: iterate over
-
         for vlan in self.connected_vlans.keys(): # Handle all connected ports
             logging.info("Handling connected vlan / port: '%s'",vlan)
-            # We don't need to handle traffic from the gateway, because this is allowed all the time. First, check unicast traffic
             # Construct unicast devices to device rules for all allowed devices
             allowed_devices = MeshNode.allowed_iot_traffic[vlan]
             in_port = self.connected_vlans[vlan]
@@ -272,6 +290,15 @@ class MeshNode():
                         parser.OFPActionOutput(port=in_port)
                     ])]
                     self.datapath.send_msg(parser.OFPFlowMod(datapath=datapath, priority=10, match=mesh_incoming_unicast_match, instructions=mesh_incoming_unicast_instruction))
+ 
+             # Output traffic from gateway to port. This is necessary, because the switch ("local target") might not have learned the local MAC, due to not having locally switching rules
+            incoming_gw_match = parser.OFPMatch(metadata=0x10, eth_dst = src_mac)
+            incoming_gw_instruction = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,[
+                parser.OFPActionOutput(port=in_port)
+            ])]
+            incoming_gw_msg = parser.OFPFlowMod(datapath=datapath, priority=11,table_id=10, match=incoming_gw_match, instructions=incoming_gw_instruction)
+            datapath.send_msg(incoming_gw_msg)
+            
 
     def __vlan_id(self, vlan_name): 
         return int(vlan_name.replace(b"iot_",b""),16)
