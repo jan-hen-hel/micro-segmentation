@@ -23,9 +23,10 @@ one needs to reset the firmware to its factory default settings and execute the 
 
 The runtime environment of the SDN-controller is not included in this GitHub repository. It needs Debian/Linux Version 10 (Buster) with the ryu-manager packet installed.
 
-The following figure illustrates the devices connected by the lab management network for all APU boxes. 
-It shows the management links that are needed to control the experiments.
-Basically, this network is used to run all experiments. However, not all devices are part of each experiment. 
+The following figure illustrates the devices connected by the lab management network for all APU boxes. It shows the management links that are needed to control the experiments.
+Basically, this network is used to run all experiments. However, not all devices are part of each experiment.
+
+
 Please see the Readme of the experiment to modifications.
 
 ![Lab Topology Graph](/doc/lab-setup.png)

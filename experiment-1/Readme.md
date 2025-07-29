@@ -13,9 +13,8 @@ The topology is shown in the following figure.
 
 ### For APU-10, APU-11, APU-12
 
-1. Clone this repository at /srv. The firmware contains a shell-script that supports it.
-2. Run the dedicated `apu_NN_install.sh` script, stored at `mesh_router_setup`. The script will install some OpenWRT packages, add some UCI-configuration and reboot the router to apply all configuration-changes
-3. Execute `flow_rules_apu_NN.sh` to install dedicated OpenFlow rules on each device. The scripts utilize `ovs-ofctl` to locally generate OpenFLow packages and install them in OpenFlows table
+1. Run the dedicated `apu_NN_install.sh` script, stored at `mesh_router_setup`. The script will install some OpenWRT packages, add some UCI-configuration and reboot the router to apply all configuration-changes
+2. Execute `flow_rules_apu_NN.sh` to install dedicated OpenFlow rules on each device. The scripts utilize `ovs-ofctl` to locally generate OpenFLow packages and install them in OpenFlows table
 
 ### For APU-20, APU-21, APU-22
 
