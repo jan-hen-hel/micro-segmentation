@@ -1,7 +1,7 @@
-# Experiment 4
+# Experiment 4 - MAC Spoofing
 
 Experiment 4 is based on experiment 1. In this experiment, GIOT-21 tries to impersonate GIOT-20 by changing its spoofing its MAC.
-For simplicity, GIOT-20 is offline during the experiment.
+For simplicity, GIOT-20 is offline during the experiment. It utilizes APU-11 from the topology of experiment 1.
 
 The log is shown below
 

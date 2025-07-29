@@ -1,4 +1,4 @@
-# Experiment 1
+# Experiment 1 - Functional Correctness
 
 Experiment 1 is designed as the proof-of-concept experiment showing the general feasibility of the approach. 
 
