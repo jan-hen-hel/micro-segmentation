@@ -1,0 +1,960 @@
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=25,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x19
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 25}'
+This is the reachability-matrix now '{b'iot_31': [25], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '25' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 25 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='25' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=25,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x19
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=25,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x19
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=1)'
+Handling port b'iot_33' of device id: 0x1a
+Removing port: b'iot_33'
+Removing device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24}'
+This is the reachability-matrix now '{b'iot_31': [], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination is not locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=0,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=0)'
+Handling port b'iot_33' of device id: 0x1a
+Addining port - name: b'iot_33'
+Detected iot-device port
+__update_port_broadcat_rules
+Locally connected VLANs: '{b'iot_31': 24, b'iot_33': 26}'
+This is the reachability-matrix now '{b'iot_31': [26], b'iot_33': [24], b'iot_20': []}'
+Brodcast-rules 1/2 - broadcast-traffic from mesh to target-port an mesh
+port: '26' is locally connected
+port: '24' is locally connected
+Broadcast-rules 2/2 - broadcast-traffic from connected ports to target-ports and mesh
+Handling connected port: 'b'iot_31''
+Port b'iot_31' has ACL rules
+Handling allowed destination b'iot_33'
+Destination port 26 is locally connected
+Sending output rule accorind to ports an mesh
+Handling connected port: 'b'iot_33''
+Port b'iot_33' has ACL rules
+Handling allowed destination b'iot_31'
+Destination port 24 is locally connected
+Sending output rule accorind to ports an mesh
+__update_port_unicast_rules called
+Handling connected vlan / port: 'b'iot_31''
+Pushing unicast-rule in_port='24' eth_src='f8:ad:cb:03:8e:ea' vlan='31' table_id=0
+Checking allowed target device: 'b'iot_33''
+Device 'b'iot_33'' is locally connected, adding corresponding switch rule based on mac-address
+Handling connected vlan / port: 'b'iot_33''
+Pushing unicast-rule in_port='26' eth_src='1C:3B:F3:A5:51:56' vlan='33' table_id=0
+Checking allowed target device: 'b'iot_31''
+Device 'b'iot_31'' is locally connected, adding corresponding switch rule based on mac-address
+Handling port status change, 'version=0x4,msg_type=0xc,msg_len=0x50,xid=0x0,OFPPortStatus(desc=OFPPort(port_no=26,hw_addr='02:0a:52:0b:a1:ba',name=b'iot_33',config=0,state=4,curr=0,advertised=0,supported=0,peer=0,curr_speed=0,max_speed=0),reason=2)'
+Handling port b'iot_33' of device id: 0x1a
